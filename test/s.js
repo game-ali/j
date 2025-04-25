@@ -23,7 +23,7 @@ document.getElementById('save-settings').addEventListener('click', function () {
     };
 
     localStorage.setItem('settings', JSON.stringify(settings));
-    alert('Settings saved successfully!');
+    alert('settings saved successfully...');
 });
 
 // Save Program Details to Local Storage
@@ -36,7 +36,7 @@ document.getElementById('save-course-details').addEventListener('click', functio
     };
 
     localStorage.setItem('programDetails', JSON.stringify(programDetails));
-    alert('Program details saved successfully!');
+    alert('program details saved successfullly...');
 });
 
 // Save Lecturer Details to Local Storage
@@ -52,14 +52,14 @@ document.getElementById('save-lecturer').addEventListener('click', function () {
     lecturers.push(lecturerDetails);
     localStorage.setItem('lecturers', JSON.stringify(lecturers));
 
-    alert('Lecturer details saved successfully!');
+    alert('lecturers details saved successfully...');
 });
 
 // Save Venues to Local Storage
 document.getElementById('save-venues').addEventListener('click', function () {
     const venues = document.getElementById('venues').value.split('-').map(venue => venue.trim());
     localStorage.setItem('venues', JSON.stringify(venues));
-    alert('Venues saved successfully!');
+    alert('Venues saved successfully..');
 });
 
 // Retrieve Data from Local Storage (Optional: For Debugging or Displaying Saved Data)
