@@ -31,7 +31,7 @@ function generateTimetableWithValidation() {
     const venues = JSON.parse(localStorage.getItem('venues'));
 
     if (!settings || !programDetails || !lecturers || !venues) {
-        alert('Incomplete data! Please ensure all required data is saved.');
+        alert('Incomplete data... Please ensure all required data is saved..');
         return;
     }
 
@@ -86,8 +86,8 @@ function generateTimetableWithValidation() {
 
             // Validate the time slot before adding it
             if (!validateTimeSlot(dayName, startTime, endTime, existingSlots)) {
-                alert(`Conflict detected! Unable to schedule Period ${period} on ${dayName}.`);
-                continue; // Skip this period if there's a conflict
+                alert(`Conflicct detected... Unable to schedule Period ${period} on ${dayName}.`);
+                continue; // Skip this period if there's a conflict....
             }
 
             const row = document.createElement('tr');
