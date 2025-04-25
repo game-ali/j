@@ -47,7 +47,7 @@ document.getElementById('save-lecturer').addEventListener('click', function () {
         id: document.getElementById('lecturer-id').value,
     };
 
-    // Save as an array to support multiple lecturers
+    // Save as an array to support multipless lecturers
     const lecturers = JSON.parse(localStorage.getItem('lecturers')) || [];
     lecturers.push(lecturerDetails);
     localStorage.setItem('lecturers', JSON.stringify(lecturers));
@@ -62,7 +62,7 @@ document.getElementById('save-venues').addEventListener('click', function () {
     alert('Venues saved successfully!');
 });
 
-// Retrieve Data from Local Storage (Optional: For Debugging or Displaying Saved Data)
+// Retrive data from local Storage (Optional: For debugging or displayng Saved data)
 function loadSavedData() {
     const settings = JSON.parse(localStorage.getItem('settings'));
     const programDetails = JSON.parse(localStorage.getItem('programDetails'));
@@ -75,5 +75,5 @@ function loadSavedData() {
     console.log('Venues:', venues);
 }
 
-// Call this function to see saved data in the console.
+// Call this function to see save data in the console.
 loadSavedData();
