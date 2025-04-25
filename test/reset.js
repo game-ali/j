@@ -2,7 +2,7 @@
 function clearAllData() {
     if (confirm("Are you sure you want to clear all saved data? This action cannot be undone.")) {
         localStorage.clear(); // Clears all data in local storage
-        alert("All saved data has been cleared successfully!");
+        alert("all saved data has been cleared successfully..");
         location.reload(); // Reload the page to reflect changes
     }
 }
@@ -11,8 +11,8 @@ function clearAllData() {
 function clearSpecificData(key) {
     if (confirm(`Are you sure you want to clear ${key}? This action cannot be undone.`)) {
         localStorage.removeItem(key); // Removes the specific key from local storage
-        alert(`${key} has been cleared successfully!`);
-        location.reload(); // Reload the page to reflect changes
+        alert(`${key} has been cleared successfuly`);
+        location.reload(); // Reload the page to reflect change
     }
 }
 
