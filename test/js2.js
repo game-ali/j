@@ -65,7 +65,7 @@ document.getElementById('generateRt').addEventListener('click', function() {
     // body...
 });
 document.getElementById('downloadTb').addEventListener('click', function() {
-    alert('Timetable downloaded successfully.');
+    alert('Timetable downloaded successfully..');
     // body...
 });
 document.getElementById('downloadRt').addEventListener('click', function() {
