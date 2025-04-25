@@ -7,7 +7,7 @@ function generateTimetable() {
     const venues = JSON.parse(localStorage.getItem('venues'));
 
     if (!settings || !programDetails || !lecturers || !venues) {
-        alert('Incomplete data! Please ensure all required data is saved.');
+        alert('Imcomplete data...');
         return;
     }
 
@@ -124,7 +124,7 @@ function generateTimetable() {
     table.appendChild(tbody);
     timetableContainer.appendChild(table);
 
-    alert('Timetable generated successfully! Editable fields are now enabled.');
+    alert('Timetable generated successfullly... Editable fields is now enabled.');
 }
 
 // Helper function to calculate end time
@@ -212,7 +212,7 @@ function loadSavedTimetable() {
         table.appendChild(tbody);
         timetableContainer.appendChild(table);
 
-        console.log('Saved timetable loaded successfully.');
+        console.log('Saved timetable loaded successfully..');
     }
 }
 
@@ -220,7 +220,7 @@ function loadSavedTimetable() {
 function resetTimetable() {
     localStorage.removeItem('updatedTimetable'); // Clear timetable from local storage
     document.getElementById('table-container').innerHTML = ''; // Clear timetable from UI
-    alert('Timetable has been reset.');
+    alert('Timetable has reset...');
 }
 
 // Attach event listeners
