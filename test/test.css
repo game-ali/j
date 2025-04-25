@@ -1,0 +1,138 @@
+body{
+
+}
+.container{
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0066cc;
+      color: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+.container2{
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0066cc;
+      color: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+
+}
+.container1{
+    display: flex;
+    flex-direction: row;
+    background-color: lightblue;
+}
+h1{
+margin: 0;
+      font-size: 1.5em;
+      font-weight: 500;
+}
+fieldset{
+    
+
+}
+header{
+    
+}
+button {
+      background-color: #004b99;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.0em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #003366 ;
+    }
+    .b2 {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      gap: 25px;
+    }
+b2:hover {
+      background-color:  skyblue;
+    }
+    p{
+        font-size: 15px;
+        color: red;
+    }
+    .info{
+        color: hotpink;
+        font-size: 20px;
+    }
+    form {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 30vw;
+}
+
+/* Compact Form Inputs */
+form .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+form .row label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+form .row input, form .row select {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+.hidden {
+    display: none;
+}
+textarea {
+  width: 70%; /* Full width of the container */
+  height: 100px; /* Adjust height as needed */
+  padding: 10px; /* Add padding for better readability */
+  font-size: 16px; /* Set a comfortable font size */
+  font-family: Arial, sans-serif; /* Choose a readable font */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  resize: vertical; /* Allow vertical resizing only */
+}
+@media(max-width: 767px){
+    button {
+      background-color: #004b99;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+}
+fieldset{
+    display: fle;
+    flex-direction: initial;
+}

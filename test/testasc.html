@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FSTG</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+
+
+</head>
+<body>
+    <fieldset class="container">
+        <header>
+            
+    <h1>Fair Schedule Timetable Generator</h1>
+<div>
+    <button id="settings">⚙️</button>
+    <button id="program">📋</button>
+    <button id="lecturers">👨‍🏫</button>
+    <button id="venues">🏛️</button>
+    <button id="generateTb">🔄T</button>
+    <button id="generateRt">🔄R</button>
+    <button id="downloadTb" class="">📥T</button>
+        <button id="downloadRt" class="">📥R</button>
+    <button id="clearF">❌</button>
+ <!--   <button id="resetTimetable">Reset Timetable</button>-->
+    <!--<button id="generateRt">Generate Report</button>-->
+    
+
+    </div>
+    <div class="">
+        
+    </div>
+    </header>
+    </fieldset><br>
+    <fieldset class="container2">
+        <header>
+<div>
+    <button id="clearAllData">Clear All Data</button>
+<button id="clearSettings">Clear Settings</button>
+<button id="clearProgramDetails">Clear Program Details</button>
+<button id="clearLecturers">Clear Lecturers</button>
+<button id="clearVenues">Clear Venues</button>
+<button id="clearTimetable">Clear Timetable</button>
+    
+
+    </div>
+    <div class="">
+        
+    </div>
+    </header>
+    </fieldset>
+
+     <p id="sMessage"></p>
+    <br>
+    <div class="container1">
+    
+        <form id="settings-form" class="hidden">
+            <h2>Settings</h2>
+
+            <div class="row">
+                <label for="school-name">School name</label>
+                <input type="text" id="school-name" placeholder="Enter School Name" required>
+            </div>
+
+            <div class="row">
+                <label for="academic-year">Academic year</label>
+                <input type="text" id="academic-year" placeholder="Enter Academic Year (e.g., 2025)" required>
+            </div>
+
+            <div class="row">
+                <label for="days">Numbers of days</label>
+                <select id="days" required>
+                    <option value="1">1 days</option>
+                    <option value="2">2 days</option>
+                    <option value="3">3 Days</option>
+                    <option value="4">4 day</option>
+                    <option value="5">5 Days</option>
+                    <option value="6">6 Days</option>
+                    <option value="7">7 Days</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label for="periods">Periods per Day</label>
+                <select id="periods" required>
+                    <option value="1">1 Periods</option>
+                    <option value="2">2 Periods</option>
+                    <option value="3">3 Periods</option>
+                    <option value="4">4 Periods</option>
+                    <option value="5">5 Periods</option>
+                    <option value="6">6 Periods</option>
+                    <option value="7">7 Periods</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label for="break-duration">Breaktime duration (in minutes)</label>
+                <input type="number" id="break-duration" placeholder="Enter Break Duration in Minutes" required>
+            </div>
+
+            <div id="start-time-section">
+                <h3>Start Time for Each Day</h3>
+                <div class="row">
+                    <label for="start-time-monday">Monday</label>
+                    <input type="time" id="start-time-monday" required>
+                </div>
+                <div class="row">
+                    <label for="start-time-tuesday">Tuesdayy</label>
+                    <input type="time" id="start-time-tuesday" required>
+                </div>
+                <div class="row">
+                    <label for="start-time-wednesday">Wednesday</label>
+                    <input type="time" id="start-time-wednesday" required>
+                </div>
+                <div class="row">
+                    <label for="start-time-thursday">Thursday</label>
+                    <input type="time" id="start-time-thursday" required>
+                </div>
+                <div class="row">
+                    <label for="start-time-friday">Friday</label>
+                    <input type="time" id="start-time-friday" required>
+                </div>
+                <div class="row">
+                    <label for="start-time-saturday">Saturday</label>
+                    <input type="time" id="start-time-saturday">
+                </div>
+                <div class="row">
+                    <label for="start-time-sunday">Sunday</label>
+                    <input type="time" id="start-time-sunday">
+                </div>
+            </div>
+
+            <div id="restricted-time-section">
+                <h3>Restricted Time Slot</h3>
+                <div class="row">
+                    <label for="restricted-day">Choose Day</label>
+                    <select id="restricted-day">
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Fridays(most important)</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="restricted-start-time">Start Time</label>
+                    <input type="time" id="restricted-start-time">
+                </div>
+                <div class="row">
+                    <label for="restricted-end-time">End Time</label>
+                    <input type="time" id="restricted-end-time">
+                </div>
+            </div>
+
+            <button type="button" id="save-settings" class="b2">Save Set</button>
+           
+</form>
+    
+     <!-- program Details Form -->
+        <form id="program-details-form" class="hidden">
+            <h2>Program Detail</h2>
+
+            <div class="row">
+                <label for="program-name">Program Name</label>
+                <input type="text" id="program-name" placeholder="Enter Program-Name" required>
+            </div>
+
+            <div class="row">
+                <label for="program">Courses(codes) Offered by the program</label>
+                <textarea id="course-and-code" placeholder="Enter all course-and-code is this format=(coursename(code)-(coursename(code)-(coursename(code)-etc."></textarea>
+                
+            </div>
+
+            <div class="row">
+                <label for="level">Level</label>
+                <input type="text" id="level" placeholder="Enter Level" required>
+            </div>
+            <div class="row">
+                <label for="level">Credit Hours</label>
+                <input type="text" id="credit-hours" placeholder="Enter Credit Hours" required>
+            </div>
+
+            <button type="button" id="save-course-details" class="b2">Save Program Details</button>
+        </form>
+            <!-- Lecturer Form -->
+<form id="lecturer-form" class="hidden">
+    <h2 id="inPut">Lecturer Details</h2>
+
+    <p id="outPut"></p>
+
+    <div class="row">
+        <label for="lecturer-name">Lecturer Name</label>
+        <input type="text" id="lecturer-name" placeholder="Enter Lecturer Name" required>
+    </div>
+
+    <div class="row">
+        <label for="lecturer-courses">Courses they teach</label>
+        <textarea id="lecturer-courses" placeholder="Enter courses separated by commas (e.g., wala, samunu, ewe, twi)" required></textarea>
+    </div>
+
+    <div class="row">
+        <label for="lecturer-id">Lecturer ID/Code</label>
+        <input type="text" id="lecturer-id" placeholder="Enter Lecturer ID or Code" required>
+    </div>
+
+    <button type="button" id="save-lecturer" class="b2">Save Lecture Details</button>
+</form>
+ <!-- Venue Form -->
+<form id="venue-form" class="hidden">
+    <h2>Venue Details</h2>
+
+    <div class="row">
+        <label for="venues">Enter All Venues (separated with -)</label>
+        <textarea id="venues" placeholder="Enter venues separated by - (e.g., Ali A - Ali B - Ali C)" required></textarea>
+    </div>
+
+    <button type="button" id="save-venues" class="b2">Save Venues</button>
+</form>
+</form>
+</div>
+<fieldset>
+    <h3 id="genetMessage"></h3>
+    <p id="cnL" class="info"></p>
+</fieldset>
+<fieldset>
+    <h3 id="generMessage"></h3>
+    
+    
+    <fieldset id="table-container" class="">
+        
+    </fieldset>
+    </div>
+</fieldset>
+
+        
+<script src ="test.js"></script>
+<script src="js2.js"></script>
+<script src="tb.js"></script>
+<script src="Schedule.js"></script>
+<script src="ots.js"></script>
+<script src="reset.js"></script>
+
+</body>
+</html>
