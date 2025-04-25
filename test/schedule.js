@@ -1,4 +1,4 @@
-// Saving Settings to Local Storage
+// Save Settings to Local Storage
 document.getElementById('save-settings').addEventListener('click', function () {
     const settings = {
         schoolName: document.getElementById('school-name').value,
@@ -23,7 +23,7 @@ document.getElementById('save-settings').addEventListener('click', function () {
     };
 
     localStorage.setItem('settings', JSON.stringify(settings));
-    alert('settings saved successfully...');
+    alert('Settings saved successfully!');
 });
 
 // Save Program Details to Local Storage
@@ -36,7 +36,7 @@ document.getElementById('save-course-details').addEventListener('click', functio
     };
 
     localStorage.setItem('programDetails', JSON.stringify(programDetails));
-    alert('Program details saved successfully..');
+    alert('Program details saved successfully!');
 });
 
 // Save Lecturer Details to Local Storage
@@ -47,22 +47,22 @@ document.getElementById('save-lecturer').addEventListener('click', function () {
         id: document.getElementById('lecturer-id').value,
     };
 
-    // Save as an array to support multipless lecturers
+    // Save as an array to support multiple lecturers
     const lecturers = JSON.parse(localStorage.getItem('lecturers')) || [];
     lecturers.push(lecturerDetails);
     localStorage.setItem('lecturers', JSON.stringify(lecturers));
 
-    alert('Lecture r details saved successfully....');
+    alert('Lecturer details saved successfully!');
 });
 
 // Save Venues to Local Storage
 document.getElementById('save-venues').addEventListener('click', function () {
     const venues = document.getElementById('venues').value.split('-').map(venue => venue.trim());
     localStorage.setItem('venues', JSON.stringify(venues));
-    alert('Venues saved successfully.');
+    alert('Venues saved successfully!');
 });
 
-// Retrive data from local Storage (Optional: For debugging or displayng Saved data)
+// Retrieve Data from Local Storage (Optional: For Debugging or Displaying Saved Data)
 function loadSavedData() {
     const settings = JSON.parse(localStorage.getItem('settings'));
     const programDetails = JSON.parse(localStorage.getItem('programDetails'));
@@ -75,5 +75,5 @@ function loadSavedData() {
     console.log('Venues:', venues);
 }
 
-// Call this function to see save data in the console.
+// Call this function to see saved data in the console.
 loadSavedData();
