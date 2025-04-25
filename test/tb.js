@@ -1,4 +1,4 @@
-// Function to generate the timetable dynamically
+// Function to generate the timetable 
 function generateTimetable() {
     // Retrieve saved data from local storage
     const settings = JSON.parse(localStorage.getItem('settings'));
@@ -18,9 +18,9 @@ function generateTimetable() {
     const lecturerList = lecturers || [];
     const venueList = venues || [];
 
-    const durationPerClass = creditHours * 60; // Convert credit hours to minutes
+    const durationPerClass = creditHours * 60; // Convect credit hours to minutes
     const timetableContainer = document.getElementById('table-container');
-    timetableContainer.innerHTML = ''; // Clear existing timetable if any
+    timetableContainer.innerHTML = ''; 
 
     const table = document.createElement('table');
     table.border = '1';
@@ -113,7 +113,7 @@ function generateTimetable() {
 
             tbody.appendChild(row);
 
-            // Update indices and time
+            // Update indies and time
             courseIndex = (courseIndex + 1) % courseList.length;
             lecturerIndex = (lecturerIndex + 1) % lecturerList.length;
             venueIndex = (venueIndex + 1) % venueList.length;
@@ -137,7 +137,7 @@ function calculateEndTime(startTime, duration) {
     return `${String(endHours).padStart(2, '0')}:${String(endMinutes).padStart(2, '0')}`;
 }
 
-// Save updated timetable to local storage
+// Save updated timetable to local storage...
 function updateTimetable() {
     const table = document.querySelector('#table-container table');
     const updatedTimetable = [];
@@ -156,7 +156,7 @@ function updateTimetable() {
         });
     });
 
-    // Save updated timetable
+    // Save updated timetabled
     localStorage.setItem('updatedTimetable', JSON.stringify(updatedTimetable));
     console.log('Timetable updated:', updatedTimetable);
 }
@@ -224,8 +224,8 @@ function resetTimetable() {
 }
 
 // Attach event listeners
-document.getElementById('generateTb').addEventListener('click', generateTimetable);
-document.getElementById('resetTimetable').addEventListener('click', resetTimetable);
+//document.getElementById('generateTb').addEventListener('click', generateTimetable);
+///document.getElementById('resetTimetable').addEventListener('click', resetTimetable);
 
 // Load timetable on page reload
 document.addEventListener('DOMContentLoaded', loadSavedTimetable);
