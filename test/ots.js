@@ -5,24 +5,24 @@ function validateTimeSlot(day, startTime, endTime, existingSlots) {
         existingSlots[day] = [];
     }
 
-    // Loop through all existing slots for the day
+    // Loop through all existing slots 4 the day
     for (let slot of existingSlots[day]) {
         // Check if the new time overlaps with any existing slot
         if (
-            (startTime >= slot.startTime && startTime < slot.endTime) || // Overlaps within an existing slot
-            (endTime > slot.startTime && endTime <= slot.endTime) ||    // Overlaps at the end of an existing slot
-            (startTime <= slot.startTime && endTime >= slot.endTime)    // Completely overlaps an existing slot
+            (startTime >= slot.startTime && startTime < slot.endTime) || // 
+            (endTime > slot.startTime && endTime <= slot.endTime) ||    // 
+            (startTime <= slot.startTime && endTime >= slot.endTime)    //
         ) {
             return false; // Overlap detected
         }
     }
 
-    // If no overlap, add the new slot to the day's schedule
+    
     existingSlots[day].push({ startTime, endTime });
     return true;
 }
 
-// Function to integrate validation into timetable generation
+
 function generateTimetableWithValidation() {
     // Retrieve saved data from local storage
     const settings = JSON.parse(localStorage.getItem('settings'));
@@ -150,7 +150,7 @@ function generateTimetableWithValidation() {
     alert('Timetable generated successfully!');
 }
 
-// Helper function to calculate end time
+// function to calculate end time
 function calculateEndTime(startTime, duration) {
     const [hours, minutes] = startTime.split(':').map(Number);
     const totalMinutes = hours * 60 + minutes + parseInt(duration, 10);
