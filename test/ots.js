@@ -147,7 +147,7 @@ function generateTimetableWithValidation() {
     table.appendChild(tbody);
     timetableContainer.appendChild(table);
 
-    alert('Timetable generated successfully!');
+    alert('timetable generated successfully.');
 }
 
 // function to calculate end time
